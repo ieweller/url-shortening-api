@@ -13,13 +13,16 @@
 <body>
 
   <header>
-    <ul class="header__navigation">
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Resources</a></li>
-    </ul>
+    <div class="header__display-left">
+      <img src="images/logo.svg" alt="">
+      <ul class="header__navigation">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </div>
 
-    <div class="header__account-links">
+    <div class="header__display-right">
       <a href="#">Login</a>
       <a href="#">Sign Up</a>
     </div>
@@ -27,59 +30,73 @@
 
   <main>
     <div id="hero">
-      <h1>More than just shorter links</h1>
+      <div class="wrapper">
+        <div>
+          <h1>More than just shorter links</h1>
 
-      <p>
-        Build your brand’s recognition and get detailed insights
-        on how your links are performing.
-      </p>
+          <p>
+            Build your brand’s recognition and get detailed insights
+            on how your links are performing.
+          </p>
 
-      <a href="#">Get Started</a>
-      <img src="images/illustration-working.svg" alt="">
+          <a href="#">Get Started</a>
+        </div>
+        <div>
+          <img src="images/illustration-working.svg" alt="">
+        </div>
+      </div>
     </div>
 
-    <form>
-      <input type="url">
-      <button>Shorten It!</button>
-    </form>
-
-    <div>
-      <h1>Advanced Statistics</h1>
-
-      <p>
-        Track how your links are performing across the web with our
-        advanced statistics dashboard.
-      </p>
+    <div id="shrink-url">
+      <div class="wrapper">
+        <form>
+          <input type="url" placeholder="Shorten a link here...">
+          <button>Shorten It!</button>
+        </form>
+      </div>
     </div>
 
-    <div>
-      <img src="images/icon-brand-recognition.svg" alt="">
-      <h2>Brand Recognition</h2>
+    <div id="advanced-statistics">
+      <div class="wrapper">
+        <div>
+          <h1>Advanced Statistics</h1>
 
-      <p>
-        Boost your brand recognition with each click. Generic links don’t
-        mean a thing. Branded links help instil confidence in your content.
-      </p>
-    </div>
+          <p>
+            Track how your links are performing across the web with our
+            advanced statistics dashboard.
+          </p>
+        </div>
 
-    <div>
-      <img src="images/icon-detailed-records.svg" alt="">
-      <h2>Detailed Records</h2>
+        <div>
+          <img src="images/icon-brand-recognition.svg" alt="">
+          <h2>Brand Recognition</h2>
 
-      <p>
-        Gain insights into who is clicking your links. Knowing when and where
-        people engage with your content helps inform better decisions.
-      </p>
-    </div>
+          <p>
+            Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.
+          </p>
+        </div>
 
-    <div>
-      <img src="images/icon-fully-customizable.svg" alt="">
-      <h2>Fully Customizable</h2>
+        <div>
+          <img src="images/icon-detailed-records.svg" alt="">
+          <h2>Detailed Records</h2>
 
-      <p>
-        Improve brand awareness and content discoverability through customizable
-        links, supercharging audience engagement.
-      </p>
+          <p>
+            Gain insights into who is clicking your links. Knowing when and where
+            people engage with your content helps inform better decisions.
+          </p>
+        </div>
+
+        <div>
+          <img src="images/icon-fully-customizable.svg" alt="">
+          <h2>Fully Customizable</h2>
+
+          <p>
+            Improve brand awareness and content discoverability through customizable
+            links, supercharging audience engagement.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div>

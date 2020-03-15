@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #33303b;
+  font-weight: 700; }
+
+p {
+  color: #94939a; }
+
+.wrapper {
+  padding: 0 2rem;
+  margin: 0 auto;
+  max-width: 48rem;
+  width: 100%; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-size: 0.8em; }
+  header a {
+    color: #94939a;
+    text-decoration: none; }
+  header .header__display-left {
+    display: flex;
+    align-items: center; }
+    header .header__display-left img {
+      width: 6rem;
+      height: auto; }
+    header .header__display-left ul {
+      display: inline;
+      margin: 0;
+      list-style: none; }
+      header .header__display-left ul li {
+        display: inline;
+        margin: 0 1em; }
+  header .header__display-right a {
+    margin: 1rem; }
+    header .header__display-right a:last-child {
+      border-radius: 99rem;
+      padding: 0.5rem 1rem;
+      background-color: #2acfcf;
+      color: white; }
+
+#hero {
+  width: 100%; }
+  #hero .wrapper {
+    display: flex;
+    padding: 3rem 0; }
+  #hero h1 {
+    margin: 0;
+    font-size: 3.2em;
+    line-height: 1.3em; }
+  #hero p {
+    line-height: 1.6em; }
+  #hero a {
+    border-radius: 99rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #2acfcf;
+    color: white;
+    font-size: 0.8em;
+    text-decoration: none; }
+  #hero img {
+    margin-right: -10rem;
+    width: 30rem; }
+
+#shrink-url .wrapper {
+  border-radius: 0.5rem;
+  padding: 2.4rem 3rem;
+  background: url(../images/bg-shorten-desktop.svg);
+  background-color: #3b3054;
+  background-size: cover;
+  background-repeat: none; }
+
+#shrink-url form {
+  display: flex;
+  justify-content: space-between; }
+  #shrink-url form input[type="url"] {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.4em 2em;
+    width: 79%; }
+    #shrink-url form input[type="url"]::placeholder {
+      color: #94939a;
+      font-size: 1.3em;
+      line-height: 1em; }
+  #shrink-url form button {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    width: 19%;
+    background-color: #2acfcf;
+    color: white;
+    font-size: 0.8em; }
