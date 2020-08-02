@@ -49,9 +49,10 @@
 
     <div id="shrink-url">
       <div class="wrapper">
-        <form>
-          <input type="url" placeholder="Shorten a link here...">
-          <button>Shorten It!</button>
+        <form action="https://rel.ink/api/links/" method="POST">
+          <label for="url">URL to Shorten:</label>
+          <input type="url" id="url" name="url" placeholder="Shorten a link here...">
+          <button type="submit">Shorten It!</button>
         </form>
       </div>
     </div>

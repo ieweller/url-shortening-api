@@ -92,6 +92,8 @@ header {
   #shrink-url form {
     display: flex;
     justify-content: space-between; }
+    #shrink-url form label {
+      display: none; }
     #shrink-url form input[type="url"] {
       border: none;
       border-radius: 0.5rem;
