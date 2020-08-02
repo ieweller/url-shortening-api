@@ -13,25 +13,28 @@
 <body>
 
   <header>
-    <div class="header__display-left">
-      <img src="images/logo.svg" alt="">
-      <ul class="header__navigation">
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Resources</a></li>
-      </ul>
-    </div>
+    <img class="logo" src="images/logo.svg" alt="">
+    <div class="wrapper">
+      <div class="header__display-left">
 
-    <div class="header__display-right">
-      <a href="#">Login</a>
-      <a href="#" class="btn">Sign Up</a>
+        <ul class="header__navigation">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+
+      <div class="header__display-right">
+        <a href="#">Login</a>
+        <a href="#" class="btn">Sign Up</a>
+      </div>
     </div>
   </header>
 
   <main>
     <div id="hero">
       <div class="wrapper">
-        <div>
+        <div class="header-block">
           <h1>More than just shorter links</h1>
 
           <p>
@@ -41,7 +44,7 @@
 
           <a href="#" class="btn">Get Started</a>
         </div>
-        <div>
+        <div class="hero__image">
           <img src="images/illustration-working.svg" alt="">
         </div>
       </div>
@@ -51,7 +54,7 @@
       <div class="wrapper">
         <form id="url-form">
           <label for="url">URL to Shorten:</label>
-          <input type="url" id="url" name="url" placeholder="Shorten a link here..." autofocus>
+          <input type="url" id="url" name="url" placeholder="Shorten a link here...">
           <button type="submit" id="url-submit" class="btn">Shorten It!</button>
         </form>
       </div>
