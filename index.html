@@ -49,17 +49,16 @@
 
     <div id="shrink-url">
       <div class="wrapper">
-        <!-- action="https://rel.ink/api/links/" method="POST" -->
         <form id="url-form">
           <label for="url">URL to Shorten:</label>
-          <input type="url" id="url" name="url" placeholder="Shorten a link here...">
-          <button type="submit" id="url-submit" class="btn" onclick="submitForm()">Shorten It!</button>
+          <input type="url" id="url" name="url" placeholder="Shorten a link here..." autofocus>
+          <button type="submit" id="url-submit" class="btn">Shorten It!</button>
         </form>
       </div>
     </div>
 
-    <div id="url-list">
-      <p id="short-url">&#91;SHORTENED LINK GOES HERE&#93;</p>
+    <div id="url-list" class="wrapper">
+      <a id="short-url" href="#" target="_blank">&#91;SHORTENED LINK GOES HERE&#93;</a>
     </div>
 
     <div id="advanced-statistics">
@@ -180,7 +179,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     document.getElementById("url-submit").addEventListener("click", function(event){
-      event.preventDefault()
+      event.preventDefault();
+      submitForm();
+    });
+
+    document.getElementById("url").addEventListener("keyup", function(event){
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        submitForm();
+      }
     });
 
     function submitForm() {
@@ -193,6 +200,7 @@
       function(data) {
         document.getElementById('url-list').style.display = 'block';
         document.getElementById('short-url').innerHTML = 'https://rel.ink/' + data.hashid;
+        document.getElementById('short-url').href = 'https://rel.ink/' + data.hashid;
       });
     }
   </script>
