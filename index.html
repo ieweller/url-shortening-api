@@ -58,7 +58,8 @@
     </div>
 
     <div id="url-list" class="wrapper">
-      <a id="short-url" href="#" target="_blank">&#91;SHORTENED LINK GOES HERE&#93;</a>
+      <p id="long-url" href="#" target="_blank">&#91;FULL URL GOES HERE&#93;</p>
+      <a id="short-url" href="#" target="_blank">&#91;SHORTENED URL GOES HERE&#93;</a>
     </div>
 
     <div id="advanced-statistics">
@@ -191,16 +192,20 @@
     });
 
     function submitForm() {
-      var longUrl = document.getElementById('url').value;
+      var urlInput = document.getElementById('url');
+      var shortUrl = document.getElementById('short-url');
+      var longUrl = document.getElementById('long-url');
 
       $.post("https://rel.ink/api/links/",
       {
-        url : longUrl
+        url : urlInput.value
       },
       function(data) {
-        document.getElementById('url-list').style.display = 'block';
-        document.getElementById('short-url').innerHTML = 'https://rel.ink/' + data.hashid;
-        document.getElementById('short-url').href = 'https://rel.ink/' + data.hashid;
+        document.getElementById('url-list').style.display = 'flex';
+        shortUrl.innerHTML = 'https://rel.ink/' + data.hashid;
+        shortUrl.href = 'https://rel.ink/' + data.hashid;
+        longUrl.innerHTML = data.url;
+        urlInput.value = "";
       });
     }
   </script>
