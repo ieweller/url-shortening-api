@@ -117,6 +117,10 @@ header {
       #shrink-url form button:hover {
         cursor: pointer; }
 
+#url-list {
+  display: none;
+  text-align: center; }
+
 #advanced-statistics {
   margin-top: -3.8rem;
   padding: 7rem 1rem;

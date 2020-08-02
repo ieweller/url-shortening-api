@@ -49,12 +49,17 @@
 
     <div id="shrink-url">
       <div class="wrapper">
-        <form action="https://rel.ink/api/links/" method="POST">
+        <!-- action="https://rel.ink/api/links/" method="POST" -->
+        <form id="url-form">
           <label for="url">URL to Shorten:</label>
           <input type="url" id="url" name="url" placeholder="Shorten a link here...">
-          <button type="submit" class="btn">Shorten It!</button>
+          <button type="submit" id="url-submit" class="btn" onclick="submitForm()">Shorten It!</button>
         </form>
       </div>
+    </div>
+
+    <div id="url-list">
+      <p id="short-url">&#91;SHORTENED LINK GOES HERE&#93;</p>
     </div>
 
     <div id="advanced-statistics">
@@ -171,5 +176,25 @@
       </div>
     </div>
   </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    document.getElementById("url-submit").addEventListener("click", function(event){
+      event.preventDefault()
+    });
+
+    function submitForm() {
+      var longUrl = document.getElementById('url').value;
+
+      $.post("https://rel.ink/api/links/",
+      {
+        url : longUrl
+      },
+      function(data) {
+        document.getElementById('url-list').style.display = 'block';
+        document.getElementById('short-url').innerHTML = 'https://rel.ink/' + data.hashid;
+      });
+    }
+  </script>
 </body>
 </html>
