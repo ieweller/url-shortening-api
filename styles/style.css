@@ -44,7 +44,9 @@ header {
   font-size: 0.8em;
   padding: 2rem; }
   header .logo {
-    position: absolute; }
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem; }
   header .wrapper {
     display: flex;
     align-items: center;
@@ -91,10 +93,12 @@ header {
         padding: 0 2rem;
         text-align: center; } }
   #hero .header-block {
+    align-items: flex-start;
     display: flex;
     flex-direction: column; }
     @media only screen and (max-width: 769px) {
       #hero .header-block {
+        align-items: center;
         margin-bottom: 4rem; } }
   #hero h1 {
     margin: 0;
@@ -105,8 +109,9 @@ header {
   #hero a {
     border-radius: 99rem;
     padding: 0.8rem 1.5rem;
-    margin: 1rem auto;
+    max-width: 10em;
     font-size: 1em;
+    text-align: center;
     text-decoration: none; }
   #hero .hero__image {
     margin-bottom: 2.5rem;
@@ -166,15 +171,27 @@ header {
         min-height: 3rem; } }
 
 #url-list {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1.5rem;
   background-color: white;
   border-radius: 0.5rem;
   margin: 1.2rem auto;
-  padding: 1.2rem 2.4rem;
-  text-align: center; }
+  text-align: left; }
+  @media only screen and (max-width: 769px) {
+    #url-list {
+      flex-direction: column;
+      align-items: flex-start; }
+      #url-list p {
+        border-bottom: 1px solid #eff0f5;
+        width: 100%; } }
+  #url-list p {
+    margin: 0;
+    padding: 1rem 0; }
   #url-list a {
+    margin: 0;
+    padding: 1rem 0;
     color: #2acfcf;
     text-decoration: none; }
 
