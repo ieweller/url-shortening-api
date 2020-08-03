@@ -35,7 +35,10 @@ p {
   color: white; }
   .btn:hover {
     background-color: #9be4e4;
-    color: white; }
+    color: white;
+    cursor: pointer; }
+  .btn--active {
+    background-color: #3b3054; }
 
 header {
   display: flex;
@@ -171,7 +174,7 @@ header {
         min-height: 3rem; } }
 
 #url-list {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
@@ -194,6 +197,10 @@ header {
     padding: 1rem 0;
     color: #2acfcf;
     text-decoration: none; }
+  #url-list .btn {
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem; }
 
 #advanced-statistics {
   padding: 1rem 1rem;
