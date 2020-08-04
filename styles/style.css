@@ -39,6 +39,8 @@ p {
     cursor: pointer; }
   .btn--active {
     background-color: #3b3054; }
+    .btn--active:hover {
+      background-color: #3b3054; }
 
 header {
   display: flex;
@@ -147,7 +149,6 @@ header {
     background-repeat: none; }
     @media only screen and (max-width: 768px) {
       #shrink-url .wrapper {
-        width: 100%;
         margin: 0 auto;
         padding: 1.5rem; } }
   #shrink-url form {
@@ -164,18 +165,22 @@ header {
       padding: 1em 1.4em;
       font-size: 1em;
       line-height: 1em;
-      width: 79%; }
+      width: 79%;
+      font-family: 'Poppins', sans-serif; }
       @media only screen and (max-width: 768px) {
         #shrink-url form input[type="url"] {
           margin-bottom: 1.5rem; } }
       #shrink-url form input[type="url"]::placeholder {
         color: #94939a; }
+      #shrink-url form input[type="url"]:invalid {
+        border: 1px solid red; }
     #shrink-url form button {
       border: none;
       border-radius: 0.5rem;
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1rem;
       width: 19%;
-      font-size: 1em; }
+      font-size: 1em;
+      font-family: 'Poppins', sans-serif; }
       #shrink-url form button:hover {
         cursor: pointer; }
     @media only screen and (max-width: 768px) {
@@ -204,14 +209,26 @@ header {
     margin: 0;
     padding: 1rem 0; }
   #url-list a {
-    margin: 0;
     padding: 1rem 0;
     color: #2acfcf;
     text-decoration: none; }
   #url-list .btn {
     color: white;
     border-radius: 0.5rem;
-    padding: 0.5rem 1rem; }
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    text-align: center; }
+    @media only screen and (max-width: 768px) {
+      #url-list .btn {
+        width: 100%; } }
+  #url-list .link-btn-group {
+    display: flex;
+    justify-content: space-between;
+    width: 50%; }
+    @media only screen and (max-width: 768px) {
+      #url-list .link-btn-group {
+        flex-direction: column;
+        width: 100%; } }
 
 #advanced-statistics {
   padding: 1rem 1rem;
