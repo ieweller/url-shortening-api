@@ -5,6 +5,7 @@
 body {
   background-color: #eff0f5;
   margin: 0;
+  padding: 0 2rem;
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif; }
 
@@ -25,7 +26,6 @@ p {
   font-weight: 400; }
 
 .wrapper {
-  padding: 0 2rem;
   margin: 0 auto;
   max-width: 48rem;
   width: 100%; }
@@ -45,7 +45,9 @@ header {
   align-items: center;
   background-color: white;
   font-size: 0.8em;
-  padding: 2rem; }
+  padding: 2rem 2rem;
+  margin-left: -2rem;
+  width: 100vw; }
   header .wrapper {
     display: flex;
     align-items: center;
@@ -94,10 +96,11 @@ header {
 #hero {
   background-color: white;
   padding-bottom: 4rem;
-  width: 100%; }
+  margin-left: -2rem;
+  width: 100vw; }
   #hero .wrapper {
     display: flex;
-    padding: 3rem 0; }
+    padding: 3rem 2rem; }
     @media only screen and (max-width: 768px) {
       #hero .wrapper {
         flex-direction: column-reverse;
@@ -126,7 +129,7 @@ header {
     text-decoration: none; }
   #hero .hero__image {
     margin-bottom: 2.5rem;
-    margin-right: -6rem; }
+    margin-right: -9rem; }
     #hero .hero__image img {
       width: 30rem; }
 
@@ -144,7 +147,7 @@ header {
     background-repeat: none; }
     @media only screen and (max-width: 768px) {
       #shrink-url .wrapper {
-        width: calc(100% - 4rem);
+        width: 100%;
         margin: 0 auto;
         padding: 1.5rem; } }
   #shrink-url form {
