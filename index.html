@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 
   <title>URL Shortener</title>
 
@@ -15,7 +15,7 @@
   <header>
     <div class="wrapper">
       <div class="header__display-left">
-        <img class="logo" src="images/logo.svg" alt="">
+        <img class="logo" src="./images/logo.svg" alt="">
 
         <ul class="header__navigation">
           <li><a href="#">Features</a></li>
@@ -48,7 +48,7 @@
           <a href="#" class="btn">Get Started</a>
         </div>
         <div class="hero__image">
-          <img src="images/illustration-working.svg" alt="">
+          <img src="./images/illustration-working.svg" alt="">
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
 
     <div class="wrapper">
       <div id="url-list">
-        <p id="long-url" href="#" target="_blank">&#91;FULL URL GOES HERE&#93;</p>
+        <a id="long-url" href="#" target="_blank">&#91;FULL URL GOES HERE&#93;</a>
         <div class="link-btn-group">
           <a id="short-url" href="#" target="_blank">&#91;SHORTENED URL GOES HERE&#93;</a>
           <a class="btn" id="copy-button" onclick="copyUrl()">Copy</a>
@@ -86,7 +86,7 @@
 
         <div class="features">
           <div class="features__card">
-            <div class="features__card__icon"><img src="images/icon-brand-recognition.svg" alt=""></div>
+            <div class="features__card__icon"><img src="./images/icon-brand-recognition.svg" alt=""></div>
             <h2>Brand Recognition</h2>
 
             <p>
@@ -96,7 +96,7 @@
           </div>
 
           <div class="features__card">
-            <div class="features__card__icon"><img src="images/icon-detailed-records.svg" alt=""></div>
+            <div class="features__card__icon"><img src="./images/icon-detailed-records.svg" alt=""></div>
             <h2>Detailed Records</h2>
 
             <p>
@@ -106,7 +106,7 @@
           </div>
 
           <div class="features__card">
-            <div class="features__card__icon"><img src="images/icon-fully-customizable.svg" alt=""></div>
+            <div class="features__card__icon"><img src="./images/icon-fully-customizable.svg" alt=""></div>
             <h2>Fully Customizable</h2>
 
             <p>
@@ -189,64 +189,7 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-
-    document.getElementById("url-submit").addEventListener("click", function(event){
-      event.preventDefault();
-      submitForm();
-    });
-
-    document.getElementById("url").addEventListener("keyup", function(event){
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        submitForm();
-      }
-    });[]
-
-    function submitForm() {
-      var urlInput = document.getElementById('url');
-      var shortUrl = document.getElementById('short-url');
-      var longUrl = document.getElementById('long-url');
-
-      $.post("https://rel.ink/api/links/",
-      {
-        url : urlInput.value
-      },
-      function(data) {
-        document.getElementById('url-list').style.display = 'flex';
-        shortUrl.innerHTML = 'https://rel.ink/' + data.hashid;
-        shortUrl.href = 'https://rel.ink/' + data.hashid;
-        longUrl.innerHTML = data.url;
-        urlInput.value = "";
-      });
-    }
-
-    function copyUrl() {
-
-      // Create an auxiliary hidden input
-      var aux = document.createElement("input");
-
-      // Get the text from the element passed into the input
-      aux.setAttribute("value", document.getElementById('short-url').innerHTML);
-
-      // Append the aux input to the body
-      document.body.appendChild(aux);
-
-      // Highlight the content
-      aux.select();
-
-      // Execute the copy command
-      document.execCommand("copy");
-
-      // Remove the input from the body
-      document.body.removeChild(aux);
-
-      document.getElementById('copy-button').classList.add('btn--active');
-      document.getElementById('copy-button').innerHTML = 'Copied!';
-
-    }
-
-  </script>
+  <script src="./scripts/script.js"></script>
 
 </body>
 </html>
