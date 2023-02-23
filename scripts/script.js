@@ -1,34 +1,27 @@
-document.getElementById("url-submit").addEventListener("click", function(event){
+/* eslint-env jquery */
+
+$( "#url-form" ).submit(function( event ) {
   event.preventDefault();
-  submitForm();
-});
 
-document.getElementById("url").addEventListener("keyup", function(event){
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    submitForm();
-  }
-});[]
-
-function submitForm() {
   var urlInput = document.getElementById('url');
   var shortUrl = document.getElementById('short-url');
   var longUrl = document.getElementById('long-url');
+  var shortLinkPop = document.getElementById('url-list');
 
-  $.post("https://rel.ink/api/links/",
+  var posting = $.post("scripts/get_data.php",
   {
-    url : urlInput.value
-  },
-  function(data) {
-    document.getElementById('url-list').style.display = 'flex';
-    shortUrl.innerHTML = 'https://rel.ink/' + data.hashid;
-    shortUrl.href = 'https://rel.ink/' + data.hashid;
-    longUrl.innerHTML = data.url;
+    hash : urlInput.value
+  });
+  
+  posting.done(function( data ) {
+    shortLinkPop.style.display = 'flex';
+    shortUrl.innerHTML = data;
+    longUrl.innerHTML = urlInput.value;
     urlInput.value = "";
   });
-}
+});
 
-function copyUrl() {
+function copyUrl() { // eslint-disable-line no-unused-vars
 
   // Create an auxiliary hidden input
   var aux = document.createElement("input");
