@@ -6,7 +6,11 @@ $( "#url-form" ).submit(function( event ) {
   var urlInput = document.getElementById('url');
   var shortUrl = document.getElementById('short-url');
   var longUrl = document.getElementById('long-url');
-  var shortLinkPop = document.getElementById('url-list');
+  var shortLinkPop = document.getElementById('url-list');  
+
+  shortLinkPop.style.display = 'flex';
+  longUrl.innerHTML = urlInput.value;
+  longUrl.href = urlInput.value;
 
   var posting = $.post("scripts/get_data.php",
   {
@@ -14,9 +18,8 @@ $( "#url-form" ).submit(function( event ) {
   });
   
   posting.done(function( data ) {
-    shortLinkPop.style.display = 'flex';
     shortUrl.innerHTML = data;
-    longUrl.innerHTML = urlInput.value;
+    shortUrl.href = data;
     urlInput.value = "";
   });
 });
